@@ -1,0 +1,215 @@
+Last login: Mon Feb 23 16:34:19 on ttys000
+dhcp-gs-291:~ luoqing$ python
+Python 2.7.9 |Anaconda 2.1.0 (x86_64)| (default, Dec 15 2014, 10:37:34) 
+[GCC 4.2.1 (Apple Inc. build 5577)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+Anaconda is brought to you by Continuum Analytics.
+Please check out: http://continuum.io/thanks and https://binstar.org
+>>> print '''\nSTSCI 4060 HW2
+... Student Name: Qing Luo
+... ***** Question 1 *****\n'''
+
+STSCI 4060 HW2
+Student Name: Qing Luo
+***** Question 1 *****
+
+>>> 
+>>> print '''\nA. Define a variable called "story"\n'''
+
+A. Define a variable called "story"
+
+>>> story='''Once upon a time, deep in an ancient
+... jungle,there lived a tiger. This tiger
+... liked to eat fish, but the jungle had
+... very little fish to offer. One day, an
+... explorer found the tiger and discovered
+... it liked fish. The explorer took the
+... tiger back to NYC, where it could
+... eat as much fish as it wanted. However,
+... the tiger became homesick, so the
+... explorer brought it back to the jungle,
+... leaving a large supply of fish.
+... 
+... -- The End of the Story --
+... '''
+>>> 
+>>> print '''\nB. Change the content of the story into a format string\n'''
+
+B. Change the content of the story into a format string
+
+>>> story=story.replace('tiger','%s').replace('fish','%s')
+>>> print story
+Once upon a time, deep in an ancient
+jungle,there lived a %s. This %s
+liked to eat %s, but the jungle had
+very little %s to offer. One day, an
+explorer found the %s and discovered
+it liked %s. The explorer took the
+%s back to NYC, where it could
+eat as much %s as it wanted. However,
+the %s became homesick, so the
+explorer brought it back to the jungle,
+leaving a large supply of %s.
+
+-- The End of the Story --
+
+>>> 
+>>> print '''\nC. Create a tuple called “t1” to hold the words of “tiger” and “fish”\n'''
+
+C. Create a tuple called “t1” to hold the words of “tiger” and “fish”
+
+>>> t1=('tiger','tiger', 'fish', 'fish', 'tiger', 'fish', 'tiger', 'fish', 'tiger', 'fish')
+>>> story=story % t1
+>>> print story
+Once upon a time, deep in an ancient
+jungle,there lived a tiger. This tiger
+liked to eat fish, but the jungle had
+very little fish to offer. One day, an
+explorer found the tiger and discovered
+it liked fish. The explorer took the
+tiger back to NYC, where it could
+eat as much fish as it wanted. However,
+the tiger became homesick, so the
+explorer brought it back to the jungle,
+leaving a large supply of fish.
+
+-- The End of the Story --
+
+>>> 
+>>> print '''\nD.  changing the animal and its food from “tiger’ and “fish” to “monkey” and “bananas"\n'''
+
+D.  changing the animal and its food from “tiger’ and “fish” to “monkey” and “bananas"
+
+>>> story=story.replace('tiger','mockey').replace('fish','bananas')
+>>> print story
+Once upon a time, deep in an ancient
+jungle,there lived a mockey. This mockey
+liked to eat bananas, but the jungle had
+very little bananas to offer. One day, an
+explorer found the mockey and discovered
+it liked bananas. The explorer took the
+mockey back to NYC, where it could
+eat as much bananas as it wanted. However,
+the mockey became homesick, so the
+explorer brought it back to the jungle,
+leaving a large supply of bananas.
+
+-- The End of the Story --
+
+>>> story=story.replace('mockey','%s').replace('bananas','%s')
+>>> print story
+Once upon a time, deep in an ancient
+jungle,there lived a %s. This %s
+liked to eat %s, but the jungle had
+very little %s to offer. One day, an
+explorer found the %s and discovered
+it liked %s. The explorer took the
+%s back to NYC, where it could
+eat as much %s as it wanted. However,
+the %s became homesick, so the
+explorer brought it back to the jungle,
+leaving a large supply of %s.
+
+-- The End of the Story --
+
+>>> t2=('mockey','mockey', 'bananas', 'bananas', 'mockey', 'bananas', 'mockey', 'bananas', 'mockey', 'bananas')
+>>> story=story % t2
+>>> print story
+Once upon a time, deep in an ancient
+jungle,there lived a mockey. This mockey
+liked to eat bananas, but the jungle had
+very little bananas to offer. One day, an
+explorer found the mockey and discovered
+it liked bananas. The explorer took the
+mockey back to NYC, where it could
+eat as much bananas as it wanted. However,
+the mockey became homesick, so the
+explorer brought it back to the jungle,
+leaving a large supply of bananas.
+
+-- The End of the Story --
+
+>>> 
+>>> print '''\n***** Question 2 *****\n'''
+
+***** Question 2 *****
+
+>>> 
+>>> print '''\nA. replace mockey to animal, bananas to food, NYC to city\n'''
+
+A. replace mockey to animal, bananas to food, NYC to city
+
+>>> story=story.replace('mockey','%(animal)s').replace('bananas','%(food)s').replace('NYC','%(city)s')
+>>> 
+>>> print '''\nB. replace into cat mice and Beijing\n'''
+
+B. replace into cat mice and Beijing
+
+>>> myDict={'animal':'cat', 'food':'mice', 'city':'Beijing'}
+>>> print "\nThe dictionary is\n", myDict
+
+The dictionary is
+{'food': 'mice', 'city': 'Beijing', 'animal': 'cat'}
+>>> story=story % myDict
+>>> print story
+Once upon a time, deep in an ancient
+jungle,there lived a cat. This cat
+liked to eat mice, but the jungle had
+very little mice to offer. One day, an
+explorer found the cat and discovered
+it liked mice. The explorer took the
+cat back to Beijing, where it could
+eat as much mice as it wanted. However,
+the cat became homesick, so the
+explorer brought it back to the jungle,
+leaving a large supply of mice.
+
+-- The End of the Story --
+
+>>> 
+>>> print '''\nC. replace into fox, rabbits and London\n'''
+
+C. replace into fox, rabbits and London
+
+>>> story=story.replace('cat','%(animal)s').replace('mice','%(food)s').replace('Beijing','%(city)s')
+>>> myDict={'animal':'fox', 'food':'rabbits', 'city':'London'}
+>>> story=story % myDict
+>>> print story
+Once upon a time, deep in an ancient
+jungle,there lived a fox. This fox
+liked to eat rabbits, but the jungle had
+very little rabbits to offer. One day, an
+explorer found the fox and discovered
+it liked rabbits. The explorer took the
+fox back to London, where it could
+eat as much rabbits as it wanted. However,
+the fox became homesick, so the
+explorer brought it back to the jungle,
+leaving a large supply of rabbits.
+
+-- The End of the Story --
+
+>>> 
+>>> print '''\n***** Question 3 *****\n'''
+
+***** Question 3 *****
+
+>>> u=[1,-2,3,4]
+>>> v=[2,3,-2,1]
+>>> uv=u[0]*v[0]+u[1]*v[1]+u[2]*v[2]+u[3]*v[3]
+>>> print "\nThe list representation of vector u is\n", u
+
+The list representation of vector u is
+[1, -2, 3, 4]
+>>> print "\nThe list representation of vector v is\n", v
+
+The list representation of vector v is
+[2, 3, -2, 1]
+>>> print "\nThe dot product u•v is\n", uv
+
+The dot product u•v is
+-6
+>>> 
+>>> 
+>>> 
+>>> 
